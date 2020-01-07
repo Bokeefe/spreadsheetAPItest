@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous" type="module"></script>  
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Scratch</title>
+</head>
+<body>
+    <h1 class="header"></h1>
+
+    <script>
+        const headerEl = document.querySelector('.header');
+const preFix = `https://spreadsheets.google.com/feeds/list/`;
+const sheetID = `1ybTPmk8WZHOxoURQeo8_H5SGHwqEjZsHtSFoRP2A5mM`;
+const postFix = `/od6/public/values?alt=json`;
+
+const spreadsheet = preFix + sheetID + postFix;
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null);
+}
+
+httpGetAsync(spreadsheet, res => console.log(JSON.parse(res)))
+
+    </script>
+</body>
+</html>
