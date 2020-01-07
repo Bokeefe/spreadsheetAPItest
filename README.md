@@ -2,10 +2,11 @@
 
 This is just revisiting a intructional video I made on using the spreadsheet api here:
 https://youtu.be/LY2SpojAqpE
-I am trouble shooting what still works and doesn't work
+I am trouble shooting what still works and doesn't work and making this available to other to do the same.
 
-use `npm start` and then go to 
-`localhost:3000` in your browser
+1 `npm i`
+2 `npm start` and then go to 
+3 `localhost:3000` in your browser
 
 open up your console log and it should be printing data from my spread sheet like the title of the tab,
 my email address and username from the spreadsheet but no data from the content of the cells.
